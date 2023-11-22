@@ -1,0 +1,17 @@
+@import "trix/dist/trix.css";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.bg-critical { background-color: #952715; }x
+.text-critical { color: #952715; }
+
+.bg-high { background-color: #f26f21; }
+.text-high { color: #f26f21; }s
+
+.bg-medium { background-color: #f39f09; }
+.text-medium { color: #f39f09; }
+
+.bg-low { background-color: #6da79b; }
+.text-low { color: #6da79b; }
