@@ -51,7 +51,6 @@ class User extends Authenticatable
     public function projects()
     {
 
-
         if ($this->hasPermissionTo('view-all-projects')) {
             return Project::query();
         }

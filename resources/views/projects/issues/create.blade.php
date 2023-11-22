@@ -14,7 +14,10 @@
                 <div class="p-6 text-gray-900">
                     <label class="block text-gray-700 text-sm font-bold mb-2" for="project">Project</label>
                     <select id="project">
-                        <option value="">Test</option>
+                        
+                        @foreach ($projects as  $project) 
+                        <option {{ $current_project->id === $project->id ? 'selected' : ''}} value="{{$project->id}}">{{ $project->name }}</option>
+                        @endforeach
                     </select>
                 </div>
                 
