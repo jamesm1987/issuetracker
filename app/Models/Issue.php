@@ -52,7 +52,7 @@ class Issue extends Model
 
     }
 
-    public function scopeMyIssues($query)
+public function scopeMyIssues($query)
     {
 
         $user = auth()->user();

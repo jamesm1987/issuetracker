@@ -13,7 +13,7 @@
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg mt-6">
                 <div class="p-6 text-gray-900">
                     <label class="block text-gray-700 text-sm font-bold mb-2" for="project">Project</label>
-                    <select id="project">
+                    <select id="project" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline">
                         
                         @foreach ($projects as  $project) 
                         <option {{ $current_project->id === $project->id ? 'selected' : ''}} value="{{$project->id}}">{{ $project->name }}</option>
@@ -23,7 +23,7 @@
                 
                 <div class="p-6 text-gray-900">
                     <label class="block text-gray-700 text-sm font-bold mb-2" for="issue-title">Title for issue <sup>*</sup></label>
-                    <input type="text" name="issue_title" required />
+                    <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" type="text" name="issue_title" required />
                 </div>
 
                 <div class="p-6 text-gray-900">
@@ -51,14 +51,6 @@
                 </div>   
                 
                 <div class="p-6 text-gray-900">
-                    <label class="block text-gray-700 text-sm font-bold mb-2" for="issue-fixer">Who will fix the issue?</label>
-                    <select name="issue_fixer">
-                        <option value="1">Admin</option>
-                        <option value="2">User</option>
-                    </select>
-                </div>    
-                
-                <div class="p-6 text-gray-900">
                     <label class="block text-gray-700 text-sm font-bold mb-2" for="issue-fixer">Who will verify the issue is fixed?</label>
                     <select name="issue_tester">
                         <option value="1">Admin</option>
@@ -66,6 +58,24 @@
                     </select>
                 </div>                    
             </div>
+
+            <div class="flex flex-wrap -mx-3 mb-6">
+                <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+                  <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="issue-fixer">
+                    Who will fix the issue?
+                  </label>
+                  <select class="appearance-none block w-full bg-gray-200 text-gray-700 border border-red-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" id="issue-fixer" name="issue_tester">
+                    <option value="1">Admin</option>
+                    <option value="2">User</option>
+                </select>
+                </div>
+                <div class="w-full md:w-1/2 px-3">
+                  <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-last-name">
+                    Last Name
+                  </label>
+                  <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-last-name" type="text" placeholder="Doe">
+                </div>
+              </div>
 
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg mt-6">
                 <div class="p-6 text-gray-900">
