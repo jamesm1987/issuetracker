@@ -1,6 +1,6 @@
 <x-app-layout>
     <x-slot name="header">
-        <div>
+        <div class="max-w-3xl mx-auto sm:px-6 lg:px-8">
             <h2 class="font-semibold text-xl text-gray-800 leading-tight">
                 Create a new issue.
             </h2>
@@ -8,11 +8,11 @@
     </x-slot>
 
     <div class="pt-1 pb-12 bg-white">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+        <div class="max-w-3xl mx-auto sm:px-6 lg:px-8">
 
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg mt-6">
                 <div class="p-6 text-gray-900">
-                    <label class="block text-gray-700 text-sm font-bold mb-2" for="project">Project</label>
+                    <label class="block uppercase text-gray-700 text-sm font-bold mb-2" for="project">Project</label>
                     <select id="project" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline">
                         
                         @foreach ($projects as  $project) 
@@ -22,19 +22,19 @@
                 </div>
                 
                 <div class="p-6 text-gray-900">
-                    <label class="block text-gray-700 text-sm font-bold mb-2" for="issue-title">Title for issue <sup>*</sup></label>
+                    <label class="block uppercase text-gray-700 text-sm font-bold mb-2" for="issue-title">Title for issue <sup>*</sup></label>
                     <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" type="text" name="issue_title" required />
                 </div>
 
                 <div class="p-6 text-gray-900">
-                    <label class="block text-gray-700 text-sm font-bold mb-2" for="issue-description">Description of issue</label>
+                    <label class="block uppercase text-gray-700 text-sm font-bold mb-2" for="issue-description">Description of issue</label>
                     <input type="hidden" id="issue-description" />
                     <trix-editor input="issue-description"></trix-editor>
  
                 </div>      
                 
                 <div class="p-6 text-gray-900">
-                    <label class="block text-gray-700 text-sm font-bold mb-2">Priority</label>
+                    <label class="block uppercase text-gray-700 text-sm font-bold mb-2">Priority</label>
                     
                     <div class="flex items-center">
 
@@ -51,7 +51,7 @@
                 </div>   
                 
                 <div class="p-6 text-gray-900">
-                    <label class="block text-gray-700 text-sm font-bold mb-2" for="issue-fixer">Who will verify the issue is fixed?</label>
+                    <label class="block uppercase text-gray-700 text-sm font-bold mb-2" for="issue-fixer">Who will verify the issue is fixed?</label>
                     <select name="issue_tester">
                         <option value="1">Admin</option>
                         <option value="2">User</option>
@@ -59,42 +59,45 @@
                 </div>                    
             </div>
 
-            <div class="flex flex-wrap -mx-3 mb-6">
-                <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+            <div class="flex flex-wrap">
+                <div class="w-full md:w-1/2 p-6 text-gray-900">
                   <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="issue-fixer">
                     Who will fix the issue?
                   </label>
-                  <select class="appearance-none block w-full bg-gray-200 text-gray-700 border border-red-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" id="issue-fixer" name="issue_tester">
+                  <select class="appearance-none block w-full text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" id="issue-fixer" name="issue_tester">
                     <option value="1">Admin</option>
                     <option value="2">User</option>
                 </select>
                 </div>
-                <div class="w-full md:w-1/2 px-3">
+                <div class="w-full md:w-1/2 p-6 text-gray-900">
                   <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-last-name">
-                    Last Name
+                    Who will verify the issue is fixed?
                   </label>
-                  <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-last-name" type="text" placeholder="Doe">
+                  <select class="appearance-none block w-full text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" id="issue-fixer" name="issue_tester">
+                    <option value="1">Admin</option>
+                    <option value="2">User</option>
+                </select>
                 </div>
               </div>
 
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg mt-6">
                 <div class="p-6 text-gray-900">
-                    <label class="block text-gray-700 text-sm font-bold mb-2" for="issue-due-date">Due date</label>
-                    <input id="issue-due-date" type="text" name="issue_due_date" />
+                    <label class="block uppercase text-gray-700 text-sm font-bold mb-2" for="issue-due-date">Due date</label>
+                    <input id="issue-due-date" class="w-full" type="text" name="issue_due_date" />
                 </div>
             </div>
 
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg mt-6">
                 <div class="p-6 text-gray-900">
-                    <label class="block text-gray-700 text-sm font-bold mb-2" for="issue-tags">Tags</label>
-                    <input id="issue-tags" type="text" name="issue_tags" />
+                    <label class="block uppercase text-gray-700 text-sm font-bold mb-2" for="issue-tags">Tags</label>
+                    <input id="issue-tags" class="w-full" type="text" name="issue_tags" />
                 </div>
             </div>  
             
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg mt-6">
                 <div class="p-6 text-gray-900">
-                    <label class="block text-gray-700 text-sm font-bold mb-2" for="issue-observers">Notify these people of issue updates</label>
-                    <input id="issue-observers" type="text" name="issue_observers" />
+                    <label class="block uppercase text-gray-700 text-sm font-bold mb-2" for="issue-observers">Notify these people of issue updates</label>
+                    <input id="issue-observers" class="w-full" type="text" name="issue_observers" />
                 </div>
             </div>    
             

@@ -4,11 +4,11 @@
 @tailwind utilities;
 
 
-.bg-critical { background-color: #952715; }x
+.bg-critical { background-color: #952715; }
 .text-critical { color: #952715; }
 
 .bg-high { background-color: #f26f21; }
-.text-high { color: #f26f21; }s
+.text-high { color: #f26f21; }
 
 .bg-medium { background-color: #f39f09; }
 .text-medium { color: #f39f09; }
