@@ -13,8 +13,6 @@ class IssuesController extends Controller
      */
     public function create(Project $project)
     {  
-        $projects = auth()->user()->projects()->get();
-        return view('projects.issues.create', ['projects' => $projects, 'current_project' => $project ]);
     }
 
     /**

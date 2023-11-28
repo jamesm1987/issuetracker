@@ -32,6 +32,7 @@
             <!-- Page Content -->
             <main>
                 {{ $slot }}
+                <livewire:forms.create-issue  />    
             </main>
         </div>
     </body>

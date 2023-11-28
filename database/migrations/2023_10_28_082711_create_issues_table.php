@@ -22,6 +22,7 @@ return new class extends Migration
             $table->string('priority');
             $table->unsignedBigInteger('issue_number');
             $table->timestamp('due_at')->default(NULL);
+            $table->softDeletes();
             $table->timestamps();
         });
     }

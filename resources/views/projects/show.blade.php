@@ -15,6 +15,7 @@
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg mt-6">
                 <div class="p-6 text-gray-900">
                     All issues
+                    {{ request()->input }}
                 </div>
             </div>
         </div>

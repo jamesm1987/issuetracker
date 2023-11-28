@@ -76,17 +76,17 @@ public function scopeMyIssues($query)
 
     public function creator()
     {
-        return $this->users()->wherePivot('role', 'Creator')->first();
+        return $this->users()->wherePivot('role', 'creator')->first();
     }
 
     public function fixer()
     {
-        return $this->users()->wherePivot('role', 'Fixer')->first();
+        return $this->users()->wherePivot('role', 'fixer')->first();
     }
 
     public function tester()
     {
-        return $this->users()->wherePivot('role', 'Tester')->first();
+        return $this->users()->wherePivot('role', 'tester')->first();
     }
 
 

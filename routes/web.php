@@ -22,12 +22,11 @@ Route::view('/', 'dashboard')
 
 Route::controller(ProjectsController::class)->middleware(['auth'])->group(function() {
     Route::get('/projects', 'index')->name('projects');
-    Route::get('/projects/{id}', 'show')->name('projects.show');
+    Route::get('/projects/{id}/', 'show')->name('projects.show');
 });
 
 Route::controller(IssuesController::class)->middleware(['auth'])->group(function() {
-    Route::get('/projects/{project}/issues/create', 'create')->name('project.issue.create');
-    Route::get('/projects/{project_id}/issues/{issue_number}', 'show')->name('project.issue.show');
+    Route::get('/projects/{project_id}/issues/{issue_number}/', 'show')->name('project.issue.show');
 });
 
 Route::view('profile', 'profile')
